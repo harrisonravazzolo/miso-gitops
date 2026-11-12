@@ -217,6 +217,7 @@ software:
 
   packages: # Custom packages (if any)
     # macOS custom packages
+    - path: ../platforms/macos/software/zoom.package.yml # Zoom, from Zoom's public installer URL
     # …
 
     # Windows custom packages

@@ -1,0 +1,9 @@
+# Zoom for macOS, downloaded from Zoom's public "latest" URL for the
+# IT installer package. Fleet fetches the package when GitOps runs
+# and picks up a new version whenever Zoom publishes one there.
+- url: https://zoom.us/client/latest/ZoomInstallerIT.pkg
+  self_service: true
+  categories:
+    - "📹 Meetings & video calls"
+  post_install_script:
+    path: zoom-post-install.sh
