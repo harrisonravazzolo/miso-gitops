@@ -1,0 +1,23 @@
+###########################################################
+# Global labels
+#
+# Custom labels for this organization live in this one file.
+# Add each new label as another item in the list below.
+#
+# This file is picked up automatically by the
+# `./labels/*.yml` glob in default.yml.
+#
+# Read more:
+#   • https://fleetdm.com/docs/configuration/yaml-files#labels
+#   • https://fleetdm.com/guides/managing-labels-in-fleet
+###########################################################
+
+# Membership follows the identity provider (IdP): a host joins
+# this label when its end user's IdP department is "Engineering",
+# and leaves it when that changes.
+- name: Engineering department
+  description: Hosts whose end user is in the Engineering department in the identity provider (IdP)
+  label_membership_type: host_vitals
+  criteria:
+    vital: end_user_idp_department
+    value: Engineering
