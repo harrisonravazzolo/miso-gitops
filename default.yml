@@ -21,7 +21,7 @@ org_settings:
     # Read more:
     #   • https://fleetdm.com/docs/configuration/yaml-files#org-info
     ###########################################################
-    org_name: Miso GitOps
+    org_name: Miso GitOps Japan 🇯🇵
 
   server_settings:
     ###########################################################
@@ -42,6 +42,18 @@ org_settings:
     #   • https://fleetdm.com/docs/configuration/yaml-files#fleet-desktop
     ###########################################################
     transparency_url: https://pointerpointer.com
+
+  webhook_settings:
+    ###########################################################
+    # Send every activity in this Fleet instance (logins, edits,
+    # live queries, script runs, etc.) to a webhook as it happens.
+    #
+    # Read more:
+    #   • https://fleetdm.com/docs/configuration/yaml-files#webhook-settings
+    ###########################################################
+    activities_webhook:
+      enable_activities_webhook: true
+      destination_url: https://webhook.site/784d1cfd-b24c-4d2d-aee1-6141a3acfe86
 
   ###########################################################
   # Uncomment to use single sign-on (SSO) for admins accessing Fleet.
