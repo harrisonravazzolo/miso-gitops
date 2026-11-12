@@ -66,6 +66,7 @@ controls:
   # ```  
   ###########################################################
   apple_settings:
+    enable_disk_encryption: true # FileVault, with the recovery key escrowed in Fleet
     configuration_profiles:
       - paths: ../platforms/macos/declaration-profiles/*.json
       - paths: ../platforms/macos/configuration-profiles/*.mobileconfig
@@ -75,19 +76,32 @@ controls:
         labels_include_any:
           - "Engineering department"
   windows_settings:
+    enable_disk_encryption: true # BitLocker, with the recovery key escrowed in Fleet
     configuration_profiles:
       - paths: ../platforms/windows/configuration-profiles/*.xml
 
   ###########################################################
   # Managed disk encryption
   #
-  # To enable and enforce disk encryption with key escrow on
-  # all supported platforms, uncomment `enable_disk_encryption`.
+  # Disk encryption with key escrow is turned on per platform,
+  # with `enable_disk_encryption` under `apple_settings` and
+  # `windows_settings` above.
   #
   # Read more here:
   #   • https://fleetdm.com/guides/enforce-disk-encryption
   ###########################################################
-  # enable_disk_encryption: true
+
+  ###########################################################
+  # Recovery Lock password
+  #
+  # Sets a unique Recovery Lock password on each eligible Mac
+  # (Apple Silicon), so recoveryOS can't be used without it.
+  # Fleet stores the password for each host.
+  #
+  # Read more here:
+  #   • https://fleetdm.com/docs/configuration/yaml-files#controls
+  ###########################################################
+  enable_recovery_lock_password: true
 
   ###########################################################
   # Managed OS updates
