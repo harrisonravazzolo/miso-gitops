@@ -1,0 +1,9 @@
+- name: macOS - DNS resolves through Cloudflare
+  query: SELECT 1 WHERE EXISTS (SELECT 1 FROM dns_resolvers WHERE type = 'nameserver' AND address = '1.1.1.1') AND NOT EXISTS (SELECT 1 FROM dns_resolvers WHERE type = 'nameserver' AND address != '' AND address NOT IN ('1.1.1.1', '1.0.0.1', '2606:4700:4700::1111', '2606:4700:4700::1001'));
+  critical: false
+  webhooks_and_tickets_enabled: true
+  description: This Mac isn't resolving DNS through Cloudflare (1.1.1.1), or is also using another DNS server.
+  resolution: No action is needed. Fleet runs a script that sets this Mac's DNS servers to Cloudflare (1.1.1.1 and 1.0.0.1) automatically.
+  platform: darwin
+  run_script:
+    path: ../scripts/set-cloudflare-dns.sh
