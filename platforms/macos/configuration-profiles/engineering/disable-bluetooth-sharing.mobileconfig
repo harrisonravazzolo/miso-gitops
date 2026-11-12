@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.Bluetooth</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>PrefKeyServicesEnabled</key>
+								<false/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Turns off Bluetooth Sharing (System Settings &gt; General &gt; Sharing).</string>
+			<key>PayloadDisplayName</key>
+			<string>Bluetooth Sharing</string>
+			<key>PayloadIdentifier</key>
+			<string>com.miso-gitops.disable-bluetooth-sharing.1E364EF5-082C-48EA-BAA3-B7FA102D8E57</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>1E364EF5-082C-48EA-BAA3-B7FA102D8E57</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Disables Bluetooth file sharing on this Mac.</string>
+	<key>PayloadDisplayName</key>
+	<string>Disable Bluetooth file sharing</string>
+	<key>PayloadIdentifier</key>
+	<string>com.miso-gitops.disable-bluetooth-sharing</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>CBAF7947-3C4D-4EDC-BC27-6829F2A7956C</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
