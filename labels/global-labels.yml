@@ -21,3 +21,20 @@
   criteria:
     vital: end_user_idp_department
     value: Engineering
+
+# Dynamic: hosts whose uptime is 30 days or more. A host joins
+# on its next label check after crossing 30 days and leaves once
+# it has been rebooted. Applies to every platform osquery runs on.
+- name: Not rebooted in 30+ days
+  description: Hosts that have been running for 30 days or more without a reboot
+  query: SELECT 1 FROM uptime WHERE days >= 30;
+  label_membership_type: dynamic
+
+# Manual: membership is exactly the hosts listed here. Add each
+# VIP's device under `hosts` by hardware serial number, hostname,
+# or UUID. Hosts added to this label in the Fleet UI but not listed
+# here are removed on the next GitOps run.
+- name: VIPs
+  description: Devices that belong to VIPs
+  label_membership_type: manual
+  hosts: []
