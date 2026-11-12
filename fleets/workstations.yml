@@ -69,9 +69,9 @@ controls:
     configuration_profiles:
       - paths: ../platforms/macos/declaration-profiles/*.json
       - paths: ../platforms/macos/configuration-profiles/*.mobileconfig
-      # Profiles in the `engineering/` subfolder only go to Macs whose
-      # end user is in the Engineering department in the IdP.
-      - paths: ../platforms/macos/configuration-profiles/engineering/*.mobileconfig
+      # Only goes to Macs whose end user is in the Engineering
+      # department in the IdP.
+      - path: ../platforms/macos/configuration-profiles/engineering/disable-bluetooth-sharing.mobileconfig
         labels_include_any:
           - "Engineering department"
   windows_settings:
