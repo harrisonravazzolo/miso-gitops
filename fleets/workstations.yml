@@ -81,13 +81,25 @@ controls:
   ###########################################################
   # Managed disk encryption
   #
-  # To enable and enforce disk encryption with key escrow on
-  # all supported platforms, uncomment `enable_disk_encryption`.
+  # Enables and enforces disk encryption with key escrow on
+  # all supported platforms.
   #
   # Read more here:
   #   • https://fleetdm.com/guides/enforce-disk-encryption
   ###########################################################
-  # enable_disk_encryption: true
+  enable_disk_encryption: true
+
+  ###########################################################
+  # Recovery Lock password
+  #
+  # Sets a unique Recovery Lock password on each eligible Mac
+  # (Apple Silicon), so recoveryOS can't be used without it.
+  # Fleet stores the password for each host.
+  #
+  # Read more here:
+  #   • https://fleetdm.com/docs/configuration/yaml-files#controls
+  ###########################################################
+  enable_recovery_lock_password: true
 
   ###########################################################
   # Managed OS updates
