@@ -15,6 +15,23 @@
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 name: "💻 Workstations"
+settings:
+  ###########################################################
+  # Failing policies webhook
+  #
+  # When hosts in this fleet start failing a policy, Fleet sends
+  # a webhook listing them. Only policies that set
+  # `webhooks_and_tickets_enabled: true` trigger it.
+  #
+  # Read more:
+  #   • https://fleetdm.com/docs/configuration/yaml-files#webhook-settings
+  #   • https://fleetdm.com/docs/using-fleet/automations
+  ###########################################################
+  webhook_settings:
+    failing_policies_webhook:
+      enable_failing_policies_webhook: true
+      destination_url: https://webhook.site/784d1cfd-b24c-4d2d-aee1-6141a3acfe86
+      host_batch_size: 0
 controls:
   setup_experience:
     ###########################################################

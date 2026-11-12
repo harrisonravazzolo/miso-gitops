@@ -1,6 +1,7 @@
 - name: Windows - Desktop wallpaper set
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP\DesktopImagePath' AND data = 'C:\Windows\Web\Wallpaper\Windows\img0.jpg';
   critical: false
+  webhooks_and_tickets_enabled: true
   description: This Windows device doesn't have the organization's desktop wallpaper set.
   resolution: No action is needed. Fleet runs a script that sets the wallpaper automatically. It appears the next time you sign in.
   platform: windows
